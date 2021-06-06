@@ -1,0 +1,6 @@
+/target
+/build
+/dist
+cache
+local
+.DS_Store
