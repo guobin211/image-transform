@@ -1,16 +1,12 @@
-mod data_type;
-mod file_utils;
-mod loop_fn;
-mod oop_class;
+mod basic;
+mod link_list;
 
 #[allow(unused_imports)]
-use crate::oop_class::Person;
+use crate::basic::run_basic_mod;
 #[allow(unused_imports)]
-use crate::oop_class::Sex;
+use crate::link_list::run_link_list;
 
 fn main() {
-    let index = loop_fn::find_index(6);
-    if index > 0 {
-        println!("find index res is {}", index);
-    }
+    // run_basic_mod();
+    run_link_list();
 }
