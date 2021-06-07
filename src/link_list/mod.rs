@@ -2,6 +2,7 @@ mod array_op;
 mod arrow_fn;
 mod link_list_string;
 
+#[allow(dead_code)]
 pub fn run_link_list() {
     let mut list = link_list_string::LinkListNumber::new();
     list = list.prepend(11);
