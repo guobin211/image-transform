@@ -12,6 +12,7 @@ pub(crate) fn print_loop_fn(c: char) {
         i += 1;
     };
     println!(" \'O\' 的索引为 {}", location);
+    println!("6 index is : {}", find_index(6));
 }
 
 #[allow(dead_code)]

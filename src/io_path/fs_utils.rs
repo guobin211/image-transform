@@ -1,8 +1,16 @@
+use std::env;
 use std::fs;
 use std::path;
+use std::path::PathBuf;
 
 #[allow(dead_code)]
 pub fn run_fs_utils() {
+    let project_dir = get_project_dir();
+    println!("root is {:?}", project_dir);
+    // 拼接路径
+    let test_dir = project_dir.join("test");
+    fs::create_dir_all(&test_dir).unwrap();
+    println!("create test dir {:?}", test_dir);
     let target = "/Users/guobin/idea/image-transform/local/data";
     if create_dir_all(target) {
         println!("create dir success {}", target);
@@ -46,5 +54,13 @@ pub fn is_file(file_path: &str) -> bool {
     match fs::metadata(dir) {
         Ok(metadata) => metadata.is_file(),
         _ => false,
+    }
+}
+
+#[allow(dead_code)]
+pub fn get_project_dir() -> PathBuf {
+    match env::current_dir() {
+        Ok(path) => path,
+        Err(_) => PathBuf::from("/"),
     }
 }

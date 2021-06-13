@@ -17,7 +17,6 @@ impl error::Error for EmptyVector {
     fn description(&self) -> &str {
         "invalid vector first element"
     }
-    // noinspection ALL
     fn cause(&self) -> Option<&dyn error::Error> {
         None
     }
